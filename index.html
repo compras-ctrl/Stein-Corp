@@ -6,7 +6,7 @@
   <title>Stein Incorporações — Transformando projetos em realidade</title>
   <style>
     :root{
-      --red:#e33; /* main brand red */
+      --red:#e33;
       --black:#111;
       --muted:#6b7280;
       --bg:#fafafa;
@@ -24,7 +24,6 @@
     nav a{font-weight:600;text-decoration:none;color:var(--black);padding:8px 12px;border-radius:8px;transition:all .18s}
     nav a:hover{background:rgba(0,0,0,0.04)}
     .cta {background:var(--red);color:#fff;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none;box-shadow:0 6px 18px rgba(227,51,51,0.18)}
-    /* HERO */
     .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:64px 24px 36px;max-width:1200px;margin:0 auto}
     .hero-left{padding-left:6px}
     h1{font-size:42px;margin:0 0 12px;line-height:1.06}
@@ -33,34 +32,28 @@
     .features{display:flex;flex-direction:column;gap:12px;margin-top:18px}
     .feature{display:flex;gap:12px;align-items:flex-start}
     .dot{min-width:40px;height:40px;border-radius:8px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
-    /* form */
     form{display:flex;flex-direction:column;gap:10px}
     input, textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #e6edf6;font-size:14px}
     .btn{display:inline-block;padding:12px 14px;border-radius:10px;background:var(--red);color:#fff;border:none;font-weight:700;cursor:pointer}
     .muted{color:var(--muted);font-size:14px}
-    /* Gallery */
     .section{max-width:1200px;margin:40px auto;padding:0 24px}
     .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
     .thumb{position:relative;overflow:hidden;border-radius:12px;cursor:pointer;box-shadow:0 8px 24px rgba(12,18,30,0.06)}
     .thumb img{width:100%;height:220px;object-fit:cover;display:block;transform:scale(1);transition:transform .5s}
     .thumb:hover img{transform:scale(1.06)}
     .tag{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,0.6);color:#fff;padding:6px 10px;border-radius:8px;font-weight:700;font-size:13px}
-    /* About / Contact */
     .two-cols{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:start}
     .card-dark{background:linear-gradient(180deg,#111,#111);color:#fff;border-radius:12px;padding:24px}
     .contact-list{display:flex;flex-direction:column;gap:8px}
     .contact-item{display:flex;gap:12px;align-items:center}
     .contact-item svg{flex:0 0 20px}
     footer{margin-top:40px;background:#0b1720;color:#9aa3ad;padding:28px 24px;text-align:center}
-    /* Modal lightbox */
     .lightbox{position:fixed;inset:0;background:rgba(2,6,23,0.7);display:none;align-items:center;justify-content:center;z-index:90;padding:20px}
     .lightbox.active{display:flex}
     .lightbox img{max-width:1100px;max-height:90vh;border-radius:12px;box-shadow:0 40px 120px rgba(2,6,23,0.6)}
     .close{position:absolute;top:18px;right:18px;background:rgba(255,255,255,0.9);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer}
-    /* Animations */
     .reveal{opacity:0;transform:translateY(12px);transition:all .7s cubic-bezier(.2,.9,.2,1)}
     .reveal.visible{opacity:1;transform:none}
-    /* Responsive */
     @media (max-width:980px){
       .hero{grid-template-columns:1fr;padding:36px 18px}
       .two-cols{grid-template-columns:1fr}
@@ -82,7 +75,7 @@
         <a href="#sobre">Sobre</a>
         <a href="#projetos">Obras</a>
         <a href="#contato">Contato</a>
-        <a class="cta" href="https://wa.me/551191010102080" target="_blank" rel="noreferrer">WhatsApp</a>
+        <a class="cta" href="https://wa.me/5511910102080" target="_blank" rel="noreferrer">WhatsApp</a>
       </nav>
     </div>
   </header>
@@ -123,7 +116,6 @@
         <div class="thumb reveal"><img src="francisco francolino linkedin.jpg" alt="Obra 1"><div class="tag">Quadra - Projeto A</div></div>
         <div class="thumb reveal"><img src="francisco francolino linkedin 2.jpg" alt="Obra 2"><div class="tag">Quadra - Projeto B</div></div>
         <div class="thumb reveal"><img src="francisco francolino linkedin 3.jpg" alt="Obra 3"><div class="tag">Quadra - Projeto C</div></div>
-        <!-- if you have more photos, add more thumbs -->
       </div>
     </section>
 
@@ -145,12 +137,12 @@
           <div class="card-dark">
             <h3 style="margin-top:0">Contato</h3>
             <div class="contact-list">
-              <div class="contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 10v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>Telefone</strong><div style="color:#ffd6d6">(+55) 11 91010-2080</div></div></div>
-              <div class="contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>E-mail</strong><div style="color:#ffd6d6">compras22@steincorp.com.br</div></div></div>
-              <div class="contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s8-4.5 8-10a8 8 0 1 0-16 0c0 5.5 8 10 8 10z" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>Endereço</strong><div style="color:#ffd6d6">Av. Paulista, 2073 - Horsa II, Conj. 1201</div></div></div>
+              <div class="contact-item"><strong>Telefone:</strong><div style="color:#ffd6d6">(+55) 11 91010-2080</div></div>
+              <div class="contact-item"><strong>E-mail:</strong><div style="color:#ffd6d6">compras22@steincorp.com.br</div></div>
+              <div class="contact-item"><strong>Endereço:</strong><div style="color:#ffd6d6">Av. Paulista, 2073 - Horsa II, Conj. 1201</div></div>
               <div style="margin-top:8px">
                 <a class="btn" href="mailto:compras22@steincorp.com.br">Enviar e-mail</a>
-                <a class="btn" style="margin-left:8px;background:#0a6b3f" href="https://wa.me/551191010102080" target="_blank" rel="noreferrer">Abrir WhatsApp</a>
+                <a class="btn" style="margin-left:8px;background:#0a6b3f" href="https://wa.me/5511910102080" target="_blank" rel="noreferrer">Abrir WhatsApp</a>
               </div>
             </div>
           </div>
@@ -180,14 +172,12 @@
     © Stein Incorporações Ltda — Todos os direitos reservados.
   </footer>
 
-  <!-- Lightbox -->
   <div id="lightbox" class="lightbox" onclick="closeLight()">
     <div class="close" onclick="closeLight();event.stopPropagation()">✕</div>
     <img id="lightboxImg" src="">
   </div>
 
   <script>
-    // Reveal on scroll
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(entries=>{
       entries.forEach(e=>{
@@ -196,7 +186,6 @@
     }, {threshold: 0.15});
     reveals.forEach(r=>observer.observe(r));
 
-    // Gallery lightbox
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     document.querySelectorAll('.thumb').forEach(t=>{
@@ -210,13 +199,11 @@
       lightbox.classList.remove('active');
     }
 
-    // Simple form handlers (simulate send + open whatsapp)
     document.getElementById('leadForm').addEventListener('submit', e=>{
       e.preventDefault();
       const nome = document.getElementById('nome').value;
       const tel = document.getElementById('telefone').value;
       const email = document.getElementById('email').value;
-      // open whatsapp with prefilled message
       const text = encodeURIComponent(`Olá, sou ${nome}. Gostaria de solicitar uma proposta. Email: ${email} Telefone: ${tel}`);
       window.open('https://wa.me/5511910102080?text='+text,'_blank');
       alert('Obrigado! Abrindo WhatsApp para finalizar o envio.');
@@ -231,7 +218,6 @@
       const text = encodeURIComponent(`Contato via site:\nNome: ${nome}\nEmail: ${email}\nTel: ${tel}\nMensagem: ${msg}`);
       window.open('https://wa.me/5511910102080?text='+text,'_blank');
       alert('Obrigado! Abrindo WhatsApp para encaminhar sua mensagem.');
-      // reset
       document.getElementById('c_nome').value='';document.getElementById('c_email').value='';document.getElementById('c_tel').value='';document.getElementById('c_msg').value='';
     }
   </script>
