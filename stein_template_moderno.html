@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stein Incorporações — Transformando projetos em realidade</title>
+  <style>
+    :root{
+      --red:#e33; /* main brand red */
+      --black:#111;
+      --muted:#6b7280;
+      --bg:#fafafa;
+      --card:#ffffff;
+      --accent:#c41b23;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;margin:0;background:var(--bg);color:var(--black);-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    header{position:sticky;top:0;z-index:40;background:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.86));backdrop-filter:blur(6px);box-shadow:0 2px 8px rgba(12,18,30,0.04)}
+    .wrap{max-width:1200px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand img{height:56px}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{font-weight:600;text-decoration:none;color:var(--black);padding:8px 12px;border-radius:8px;transition:all .18s}
+    nav a:hover{background:rgba(0,0,0,0.04)}
+    .cta {background:var(--red);color:#fff;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none;box-shadow:0 6px 18px rgba(227,51,51,0.18)}
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:64px 24px 36px;max-width:1200px;margin:0 auto}
+    .hero-left{padding-left:6px}
+    h1{font-size:42px;margin:0 0 12px;line-height:1.06}
+    p.lead{color:var(--muted);margin:0 0 18px;font-size:16px}
+    .hero-card{background:linear-gradient(180deg,#fff,#fff);border-radius:16px;padding:20px;box-shadow:0 20px 40px rgba(11,20,45,0.06)}
+    .features{display:flex;flex-direction:column;gap:12px;margin-top:18px}
+    .feature{display:flex;gap:12px;align-items:flex-start}
+    .dot{min-width:40px;height:40px;border-radius:8px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+    /* form */
+    form{display:flex;flex-direction:column;gap:10px}
+    input, textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #e6edf6;font-size:14px}
+    .btn{display:inline-block;padding:12px 14px;border-radius:10px;background:var(--red);color:#fff;border:none;font-weight:700;cursor:pointer}
+    .muted{color:var(--muted);font-size:14px}
+    /* Gallery */
+    .section{max-width:1200px;margin:40px auto;padding:0 24px}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .thumb{position:relative;overflow:hidden;border-radius:12px;cursor:pointer;box-shadow:0 8px 24px rgba(12,18,30,0.06)}
+    .thumb img{width:100%;height:220px;object-fit:cover;display:block;transform:scale(1);transition:transform .5s}
+    .thumb:hover img{transform:scale(1.06)}
+    .tag{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,0.6);color:#fff;padding:6px 10px;border-radius:8px;font-weight:700;font-size:13px}
+    /* About / Contact */
+    .two-cols{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:start}
+    .card-dark{background:linear-gradient(180deg,#111,#111);color:#fff;border-radius:12px;padding:24px}
+    .contact-list{display:flex;flex-direction:column;gap:8px}
+    .contact-item{display:flex;gap:12px;align-items:center}
+    .contact-item svg{flex:0 0 20px}
+    footer{margin-top:40px;background:#0b1720;color:#9aa3ad;padding:28px 24px;text-align:center}
+    /* Modal lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(2,6,23,0.7);display:none;align-items:center;justify-content:center;z-index:90;padding:20px}
+    .lightbox.active{display:flex}
+    .lightbox img{max-width:1100px;max-height:90vh;border-radius:12px;box-shadow:0 40px 120px rgba(2,6,23,0.6)}
+    .close{position:absolute;top:18px;right:18px;background:rgba(255,255,255,0.9);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+    /* Animations */
+    .reveal{opacity:0;transform:translateY(12px);transition:all .7s cubic-bezier(.2,.9,.2,1)}
+    .reveal.visible{opacity:1;transform:none}
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;padding:36px 18px}
+      .two-cols{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .hero-right, nav{display:none}
+      .brand img{height:48px}
+    }
+    @media (max-width:560px){
+      h1{font-size:28px}
+      .gallery .thumb img{height:160px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand"><img src="logo_stein_alta_qualidade.jpg" alt="Stein logo"><div style="font-weight:800">Stein Incorporações</div></div>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Obras</a>
+        <a href="#contato">Contato</a>
+        <a class="cta" href="https://wa.me/551191010102080" target="_blank" rel="noreferrer">WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Hero">
+      <div class="hero-left">
+        <div class="reveal" style="transition-delay:.05s">
+          <h1>Transformando projetos em realidade</h1>
+          <p class="lead">A Stein Incorporações transforma terrenos e ideias em empreendimentos com qualidade, inovação e responsabilidade técnica.</p>
+          <div class="features">
+            <div class="feature"><div class="dot">01</div><div><strong>Projetos residenciais</strong><div class="muted">Planejamento e execução com foco em usabilidade e valor.</div></div></div>
+            <div class="feature"><div class="dot">02</div><div><strong>Soluções sustentáveis</strong><div class="muted">Materiais e processos que reduzem impacto ambiental.</div></div></div>
+            <div class="feature"><div class="dot">03</div><div><strong>Entrega no prazo</strong><div class="muted">Cronogramas realistas e gestão dedicada.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="hero-card reveal" style="transition-delay:.12s">
+          <h3 style="margin:0 0 6px">Peça uma proposta</h3>
+          <p class="muted" style="margin:0 0 12px">Preencha os dados e nossa equipe retorna em até 24h.</p>
+          <form id="leadForm">
+            <input id="nome" type="text" placeholder="Seu nome" required>
+            <input id="email" type="email" placeholder="seu@exemplo.com" required>
+            <input id="telefone" type="text" placeholder="(00) 00000-0000" required>
+            <button class="btn" type="submit">Solicitar proposta</button>
+            <div style="font-size:13px;color:var(--muted);margin-top:8px">Ao enviar, você concorda em ser contactado pela Stein.</div>
+          </form>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projetos" class="section">
+      <h2 style="margin:0 0 12px">Obras recentes</h2>
+      <p class="muted" style="margin:0 0 18px">Algumas entregas feitas pela Stein — clique para ampliar.</p>
+      <div class="gallery">
+        <div class="thumb reveal"><img src="francisco francolino linkedin.jpg" alt="Obra 1"><div class="tag">Quadra - Projeto A</div></div>
+        <div class="thumb reveal"><img src="francisco francolino linkedin 2.jpg" alt="Obra 2"><div class="tag">Quadra - Projeto B</div></div>
+        <div class="thumb reveal"><img src="francisco francolino linkedin 3.jpg" alt="Obra 3"><div class="tag">Quadra - Projeto C</div></div>
+        <!-- if you have more photos, add more thumbs -->
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="two-cols">
+        <div>
+          <h2>Sobre a Stein</h2>
+          <p class="muted">A Stein Incorporações Ltda atua com foco em incorporações residenciais e urbanismo. Nossa equipe técnica alia experiência de mercado a práticas sustentáveis, garantindo obras seguras, bem planejadas e com alto padrão de acabamento.</p>
+          <p style="margin-top:12px">Nossos serviços incluem: estudo de viabilidade, desenvolvimento de projetos executivos, gestão de obras, e entrega com garantia técnica.</p>
+          <h3 style="margin-top:18px">Por que contratar a Stein?</h3>
+          <ul style="margin-top:8px;color:var(--muted)">
+            <li>Equipe técnica qualificada</li>
+            <li>Compromisso com prazos e custos</li>
+            <li>Foco em inovação e sustentabilidade</li>
+          </ul>
+        </div>
+
+        <aside>
+          <div class="card-dark">
+            <h3 style="margin-top:0">Contato</h3>
+            <div class="contact-list">
+              <div class="contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 10v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>Telefone</strong><div style="color:#ffd6d6">(+55) 11 91010-2080</div></div></div>
+              <div class="contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>E-mail</strong><div style="color:#ffd6d6">compras22@steincorp.com.br</div></div></div>
+              <div class="contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s8-4.5 8-10a8 8 0 1 0-16 0c0 5.5 8 10 8 10z" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>Endereço</strong><div style="color:#ffd6d6">Av. Paulista, 2073 - Horsa II, Conj. 1201</div></div></div>
+              <div style="margin-top:8px">
+                <a class="btn" href="mailto:compras22@steincorp.com.br">Enviar e-mail</a>
+                <a class="btn" style="margin-left:8px;background:#0a6b3f" href="https://wa.me/551191010102080" target="_blank" rel="noreferrer">Abrir WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="contato" class="section" style="padding-bottom:60px">
+      <h2>Fale conosco</h2>
+      <p class="muted">Envie sua mensagem e nossa equipe entrará em contato.</p>
+      <div style="max-width:760px;margin-top:14px">
+        <form onsubmit="event.preventDefault(); handleContactSubmit();">
+          <input id="c_nome" type="text" placeholder="Nome completo" required>
+          <input id="c_email" type="email" placeholder="E-mail" required>
+          <input id="c_tel" type="text" placeholder="Telefone" required>
+          <textarea id="c_msg" rows="5" placeholder="Sua mensagem"></textarea>
+          <div style="display:flex;gap:10px;margin-top:12px">
+            <button class="btn" type="submit">Enviar mensagem</button>
+            <a class="cta" href="https://goo.gl/maps/QmYp8" target="_blank" rel="noreferrer" style="align-self:center">Ver mapa</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © Stein Incorporações Ltda — Todos os direitos reservados.
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLight()">
+    <div class="close" onclick="closeLight();event.stopPropagation()">✕</div>
+    <img id="lightboxImg" src="">
+  </div>
+
+  <script>
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, {threshold: 0.15});
+    reveals.forEach(r=>observer.observe(r));
+
+    // Gallery lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    document.querySelectorAll('.thumb').forEach(t=>{
+      t.addEventListener('click', e=>{
+        const img = t.querySelector('img').src;
+        lightboxImg.src = img;
+        lightbox.classList.add('active');
+      });
+    });
+    function closeLight(){
+      lightbox.classList.remove('active');
+    }
+
+    // Simple form handlers (simulate send + open whatsapp)
+    document.getElementById('leadForm').addEventListener('submit', e=>{
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const tel = document.getElementById('telefone').value;
+      const email = document.getElementById('email').value;
+      // open whatsapp with prefilled message
+      const text = encodeURIComponent(`Olá, sou ${nome}. Gostaria de solicitar uma proposta. Email: ${email} Telefone: ${tel}`);
+      window.open('https://wa.me/551191010102080?text='+text,'_blank');
+      alert('Obrigado! Abrindo WhatsApp para finalizar o envio.');
+      document.getElementById('leadForm').reset();
+    });
+
+    function handleContactSubmit(){
+      const nome = document.getElementById('c_nome').value;
+      const email = document.getElementById('c_email').value;
+      const tel = document.getElementById('c_tel').value;
+      const msg = document.getElementById('c_msg').value;
+      const text = encodeURIComponent(`Contato via site:\nNome: ${nome}\nEmail: ${email}\nTel: ${tel}\nMensagem: ${msg}`);
+      window.open('https://wa.me/551191010102080?text='+text,'_blank');
+      alert('Obrigado! Abrindo WhatsApp para encaminhar sua mensagem.');
+      // reset
+      document.getElementById('c_nome').value='';document.getElementById('c_email').value='';document.getElementById('c_tel').value='';document.getElementById('c_msg').value='';
+    }
+  </script>
+</body>
+</html>
